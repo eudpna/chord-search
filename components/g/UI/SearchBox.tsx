@@ -32,6 +32,6 @@ export const SearchBox: React.FC<{
 export function search(gctx: GCtx) {
     const results = getChords(gctx.state.instrument).search(gctx.state.q)
     console.log(results)
-    gctx.state.chords = results.slice(0, 20)
+    gctx.state.chords = results.slice(0, 10)
     gctx.state.theChord = null
 }
