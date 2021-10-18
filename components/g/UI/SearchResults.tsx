@@ -40,17 +40,17 @@ export const Position: React.FC<{
                 className={"rounded-full w-16 h-16 border-gray border-2 p-4 mb-6 ml-3 " + (state.isSounding ? 'bg-gray-200' : '')}
                 onClick={(e) => {
                     e.stopPropagation()
-                    props.position.midi.map(keyId => {
-                        sound(props.gctx, keyId)
+                    sound(props.gctx, props.position.midi)
+                    .then(() => {
+                        setTimeout(() => {
+                            setState(state => ({
+                                isSounding: false
+                            }))
+                        }, 500)
                     })
                     setState(state => ({
                         isSounding: true
                     }))
-                    setTimeout(() => {
-                        setState(state => ({
-                            isSounding: false
-                        }))
-                    }, 500)
                 }}>
                 <SoundIcon />
             </div>
