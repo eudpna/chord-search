@@ -1,6 +1,5 @@
 import guitar from '@tombatossals/chords-db/lib/guitar.json'
 import ukulele from '@tombatossals/chords-db/lib/ukulele.json'
-import moji from './moji'
 
 const keysPriority = [
     'C',
@@ -119,7 +118,6 @@ export default class Chords {
             .replace('ナイン', '9')
             .replace('シックス', '6')
             .replace(/\s/g, '')
-        q = moji(q).convert('ZEtoHE').toString()
         q = format2name(q)
 
         if (q === '') return this.sort(Object.values(this.chords))
