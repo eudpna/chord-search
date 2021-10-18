@@ -85,7 +85,7 @@ export const SearchResult: React.FC<{
                 gctx.render()
             }}
         >
-            {gctx.state.theChord !== c ? <div className="p-1 absolute bottom-0 right-0 text-xs text-gray-400">タップして詳細を表示</div> : null}
+            {gctx.state.theChord !== c ? <div className="p-1 absolute bottom-0 right-0 text-xs text-gray-400">タップしてバリエーションを表示</div> : null}
             <div className="w-full flex">
                 <div className="absolute top-0 left-0 text-gray-700 text-2xl flex-grow p-3">
                     <div className="ml-1 pl-2">
