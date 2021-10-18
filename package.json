@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "yarn run build-tailwind && next build",
     "start": "next start",
     "build-tailwind": "npx tailwindcss-cli@latest build -o public/css/tailwind.css",
     "upload": "bash scripts/upload.sh",
