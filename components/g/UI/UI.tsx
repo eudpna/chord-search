@@ -8,7 +8,7 @@ export const UI: React.FC<{
     gctx: GCtx
 }> = (props) => {
     return <>
-    <div className="px-8 pb-12 mx-auto max-w-lg">
+    <div className="px-8 pb-24 mx-auto max-w-lg">
             <InstrumentBtns gctx={props.gctx} />
             <SearchBox gctx={props.gctx} />
             <SearchResults gctx={props.gctx} />

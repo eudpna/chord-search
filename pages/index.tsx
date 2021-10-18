@@ -1,6 +1,7 @@
 
 import Head from 'next/head'
 import React, { useEffect } from 'react'
+import Container from '../components/container'
 import { G } from '../components/g/G'
 
 
@@ -9,11 +10,13 @@ const Index: React.FC<{}> = () => {
         <Head>
             <title>ギターコード検索</title>
         </Head>
-        <div lang="ja" className="w-full pt-10">
-            <div>
-                <G />
+        <Container>
+            <div lang="ja" className="w-full pt-10">
+                <div>
+                    <G />
+                </div>
             </div>
-        </div>
+        </Container>
     </>
 }
 

@@ -1,7 +1,6 @@
 import React from "react";
 import { GCtx } from "../../../g/GCtx";
 import { search, SearchBox } from "./SearchBox";
-import { SearchResults } from "./SearchResults";
 
 export const InstrumentBtns: React.FC<{
     gctx: GCtx
