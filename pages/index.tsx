@@ -8,7 +8,6 @@ const Index: React.FC<{}> = () => {
     return <>
         <Head>
             <title>ギターコード検索</title>
-            <meta name="viewport" content=""></meta>
         </Head>
         <div lang="ja" className="w-full pt-10">
             <div>

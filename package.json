@@ -13,7 +13,9 @@
   "dependencies": {
     "@tombatossals/chords-db": "^0.5.1",
     "@tombatossals/react-chords": "^0.2.10",
+    "@types/howler": "^2.2.4",
     "autoprefixer": "^10.2.4",
+    "howler": "^2.2.3",
     "moji": "^0.5.1",
     "next": "10.0.4",
     "postcss": "^8.2.1",
