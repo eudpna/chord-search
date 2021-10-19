@@ -89,7 +89,7 @@ export const SearchResult: React.FC<{
             <div className="w-full flex">
                 <div className="absolute top-0 left-0 text-gray-700 text-2xl flex-grow p-3">
                     <div className="ml-1 pl-2">
-                        {c.key + c.suffix}
+                        {chord2displayName(c)}
                     </div>
                     
                 </div>
@@ -112,4 +112,9 @@ export const SearchResults: React.FC<{
     return <>{
         props.gctx.state.chords.map((c, i) => <div key={i}><SearchResult gctx={props.gctx} chord={c}/></div>)
     }</>
+}
+
+function chord2displayName(chord: ChordType): string {
+    if (chord.suffix === 'M') return chord.key
+    return chord.key + chord.suffix
 }
