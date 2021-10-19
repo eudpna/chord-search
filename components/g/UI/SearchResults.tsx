@@ -69,23 +69,28 @@ export const SearchResult: React.FC<{
     gctx: GCtx
     chord: ChordType
 }> = (props) => {
+
+    const [state, setState] = useState<{
+        isOpen: boolean
+    }>({
+        isOpen: false
+    })
     
     
     const gctx = props.gctx
     const c = props.chord
-    const positions = gctx.state.theChord !== c ? c.positions.slice(0, 1) : c.positions
+    const positions = !state.isOpen ? c.positions.slice(0, 1) : c.positions
     
     return (
         <div key={gctx.state.instrument + c.key + c.suffix}
             className="w-full max-w-sm mx-auto border-2 my-4 rounded-lg cursor-pointer relative pb-2"
             onClick={(e) => {
-                if (gctx.state.theChord !== c) {
-                    gctx.state.theChord = c
-                } else gctx.state.theChord = null
+                if (!state.isOpen) setState(state => ({ isOpen: true }))
+                else setState(state => ({ isOpen: false }))
                 gctx.render()
             }}
         >
-            {gctx.state.theChord !== c ? <div className="p-1 absolute bottom-0 right-0 text-xs text-gray-400">タップしてバリエーションを表示</div> : null}
+            {!state.isOpen ? <div className="p-1 absolute bottom-0 right-0 text-xs text-gray-400">タップしてバリエーションを表示</div> : null}
             <div className="w-full flex">
                 <div className="absolute top-0 left-0 text-gray-700 text-2xl flex-grow p-3">
                     <div className="ml-1 pl-2">
@@ -110,7 +115,7 @@ export const SearchResults: React.FC<{
     gctx: GCtx
 }> = (props) => {
     return <>{
-        props.gctx.state.chords.map((c, i) => <div key={i}><SearchResult gctx={props.gctx} chord={c}/></div>)
+        props.gctx.state.chords.map((c, i) => <div key={c.key+c.suffix}><SearchResult gctx={props.gctx} chord={c}/></div>)
     }</>
 }
 
