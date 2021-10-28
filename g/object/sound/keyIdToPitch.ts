@@ -8,7 +8,7 @@ export type Pitch = {
 
 // フラットに統一される
 export function keyidToPitchFlat(keyid: number): Pitch {
-    const octave = Math.floor(keyid / 12)
+    const octave = Math.floor(keyid / 12) - 1
     const solfa = [
         'C',
         'Db',
@@ -31,7 +31,7 @@ export function keyidToPitchFlat(keyid: number): Pitch {
 
 // よく使うほう
 export function keyidToPitch(keyid: number): Pitch {
-    const octave = Math.floor(keyid / 12)
+    const octave = Math.floor(keyid / 12) - 1
     const solfa = [
         'C',
         'C#',
