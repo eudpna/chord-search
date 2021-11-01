@@ -16,8 +16,9 @@ export const SearchBox: React.FC<{
         }, 0)
     }, [])
 
-    return <input
-            className="mb-4 w-full p-2 px-4 rounded-lg border-gray border-2"
+    return <div className="max-w-sm mx-auto">
+        <input
+            className="mb-4 w-full p-2 px-5 rounded-full border-gray border-2"
             type="text"
             value={props.gctx.state.q}
             placeholder={"コードを検索"}
@@ -27,6 +28,7 @@ export const SearchBox: React.FC<{
                 props.gctx.render()
             }}
         />
+    </div>   
 }
 
 export function search(gctx: GCtx) {
