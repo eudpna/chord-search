@@ -13,7 +13,7 @@ export function sound(gctx: GCtx, keyIDs: number[]) {
             const filename = `${pitch.octave}${SolfaToFlat(pitch.solfa)}.mp3`
             const audio = new Howl({
                 src: [`/audios/${instrument}/${filename}`],
-                volume: 1,
+                volume: 0.3,
             });
             if (audio.state() === 'loaded') resolve(audio)
             else audio.on('load', () => {
